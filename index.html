@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Memory Assistant helps you manage and organize your memories efficiently." />
+    <meta name="keywords" content="memory, assistant, organizer, notes" />
+
+    <title>Memory Assistant</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+</head>
+
+<body class="light-mode">
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Memory Assistant</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#memory-form-section">Add Memory</a></li>
+                    <li><a href="#memory-list-section">All Memories</a></li>
+                    <li><a href="#today-memories-section">Today's Memories</a></li>
+                </ul>
+            </nav>
+            <div class="dark-mode-toggle">
+                <input type="checkbox" id="dark-mode-toggle" aria-label="Toggle dark mode" />
+                <label for="dark-mode-toggle" class="toggle-label">
+                    <span class="toggle-ball"></span>
+                </label>
+            </div>
+        </div>
+    </header>
+    
+    
+    
+
+    <!-- Search and Filter Section -->
+    <section id="search-filter-section">
+        <form id="search-form">
+            <div class="form-group">
+                <label for="search-input">Search Memories:</label>
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Type to search memories"
+                />
+            </div>
+    
+            <div class="form-group">
+                <label for="filter-category">Filter by Category:</label>
+                <select id="filter-category">
+                    <option value="All">All</option>
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Fitness">Fitness</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        </form>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Memory Form Section -->
+    <section id="memory-form-section">
+        <form id="memory-form">
+            <div class="form-group">
+                <label for="memory-input">Add a Memory:</label>
+                <input type="text" id="memory-input" name="memory" placeholder="Enter your memory here" required />
+            </div>
+    
+            <div class="form-group">
+                <label for="category-select">Select Category:</label>
+                <select id="category-select" required>
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Fitness">Fitness</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+    
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Save Memory</button>
+                <button type="button" id="clear-memories" class="btn btn-danger">Clear All Memories</button>
+                <button type="button" id="export-memories" class="btn btn-success">Export Memories</button>
+                <input type="file" id="import-memories" accept=".json" class="file-input" />
+            </div>
+    
+            <div class="form-group">
+                <label for="sort-memories">Sort Memories:</label>
+                <select id="sort-memories">
+                    <option value="default">Default</option>
+                    <option value="alphabetical">Alphabetical</option>
+                    <option value="category">By Category</option>
+                    <option value="date">By Date</option>
+                </select>
+            </div>
+        </form>
+    </section>
+    
+    
+    
+    
+
+
+
+    <!-- Memory List Section -->
+    <section id="memory-list-section">
+        <h2>All Memories</h2>
+        <ul id="memory-list"></ul>
+    </section>
+    
+
+    <!-- Today's Memories Section -->
+    <section id="today-memories-section">
+        <h2>Today's Memories</h2>
+        <ul id="today-memories"></ul>
+    </section>
+    
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal-overlay" role="dialog" aria-labelledby="modal-message" aria-hidden="true">
+        <div class="modal-content">
+            <p id="modal-message" class="modal-text">Are you sure?</p>
+            <button id="confirm-button" class="modal-button">Delete</button>
+            <button id="cancel-button" class="modal-button">Cancel</button>
+        </div>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer>
+        Memory Assistant © 2024 | Built For Better Memory Management
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+
+</html>
